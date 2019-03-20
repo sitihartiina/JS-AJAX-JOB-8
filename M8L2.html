@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX DASAR 2</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<h1>BELAJAR AJAX</h1>
+<p id="demo">AJAX akan mengubah teks ini</p>
+<button type="button" onclick="loadDoc()">Ubah</button>
+
+<script>
+	//Ajax = Asynchronous JavaScript And XML
+	function loadDoc(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("demo").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET","https://gist.githubusercontent.com/sitihartiina/")
+	}
+</script>
+</body>
+</html>
